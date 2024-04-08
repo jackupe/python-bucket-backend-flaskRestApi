@@ -145,4 +145,3 @@ if __name__ == '__main__':
     #aws.clear_acc_key()
     #aws.clear_bucket()
 
-    # {'UserName': 'user-flask-rest-api', 'AccessKeyId': 'AKIA3LSK25XKJMQMWSXT', 'Status': 'Active', 'SecretAccessKey': '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', 'CreateDate': datetime.datetime(2024, 4, 7, 0, 56, 28, tzinfo=tzutc())}
