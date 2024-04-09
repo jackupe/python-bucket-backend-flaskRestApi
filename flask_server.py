@@ -15,7 +15,6 @@ app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1000 * 1000  # 500 MB
 app.config['FS_ENGINE'] = file_handler.FileHandler()
 
-
 CORS_ALLOW_ORIGIN = "*,*"
 CORS_EXPOSE_HEADERS = "*,*"
 CORS_ALLOW_HEADERS = "content-type,*"
@@ -42,6 +41,11 @@ def bad_request(error):
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
+
+
+@app.errorhandler(500)
+def server_error(error):
+    return make_response(jsonify({'error': 'Problem with server. Please try again later'}), 500)
 
 
 @cross_origin()
